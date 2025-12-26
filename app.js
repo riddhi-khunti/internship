@@ -1,11 +1,22 @@
-const express = require("express");
-const app = express();
-const PORT = 3001;
+import { useState } from 'react'
+import './App.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Login from './Pages/login';
+import Register from './Pages/register';
 
-app.get("/endpoint", (req, res) => {
-    res.json( "hello world" );
-});
+function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/login",
+      element: <Login />
+    },
+     {
+      path: "/register",
+      element: <Register />
+    }
+  ]);
 
-app.listen(PORT, () => {
-   console.log(`Running PORT : ${PORT}`);
-});
+  return <RouterProvider router={router} />;
+}
+
+export default App
