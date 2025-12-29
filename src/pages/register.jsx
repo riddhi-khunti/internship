@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
-import { Apiservice } from "../services/apiservice";
+import { Apiservice } from "../services/Apiservice";
 
 const Register = () => {
     const [formData, setFormData] = useState({

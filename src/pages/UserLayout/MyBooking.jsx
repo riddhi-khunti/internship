@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MyBooking=() => {
+const MyBooking = () => {
   return (
     <div>
       <p>My Booking</p>

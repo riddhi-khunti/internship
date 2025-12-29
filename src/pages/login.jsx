@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { User, ShieldCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
- import { Apiservice } from "../services/apiservice";
-
+import { Apiservice } from "../services/Apiservice";
 
 const Login = () => {
   const [role, setRole] = useState("user");
@@ -44,11 +43,10 @@ const Login = () => {
     try {
       const res = await Apiservice.post("user/login", { ...form, role });
       console.log(res)
-      localStorage.setItem("authData",JSON.stringify(res))
+      localStorage.setItem("authData",JSON.stringify(res.data))
       navigate('/');
     } catch (error) {
       console.log(error);
-      
     }
   }
 
